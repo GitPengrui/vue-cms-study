@@ -22,6 +22,17 @@ import './lib/mui/css/mui.css'
 //导入mui的扩张图标css
 import './lib/mui/css/icons-extra.css'
 
+//引入moment插件
+import moment from 'moment'
+//定义全局过滤器
+Vue.filter('dateFormat', function( dataStr, pattern=" YY-MM-DD HH:mm:ss " ){
+  return moment(dataStr).format(pattern)
+})
+
+//注册全局组件
+import comment from './components/comment.vue'
+Vue.component('comment', comment )
+
 //导入vue-resource
 import VueResource from 'vue-resource'
 Vue.use(VueResource)

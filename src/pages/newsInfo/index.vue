@@ -2,11 +2,14 @@
     <div class="news-info-container">
         <h3 class="title">{{ newsInfo.title }}</h3>
         <p class="subtitle">
-            <span>发表时间: {{ newsInfo.add_time }}</span>
+            <span>发表时间: {{ newsInfo.add_time | dateFormat }}</span>
             <span>点击: {{ newsInfo.click }}次</span>
         </p>
         <hr>
         <div class="contentImg" v-html="newsInfo.content"></div>
+
+        <!-- 评论子组件 -->
+        <comment :id="id"></comment>
     </div>
 </template>
 
@@ -24,7 +27,7 @@ export default {
     methods: {
         getnewsInfo(){
             this.$http.get('getnew/' + this.id).then(result => {
-                console.log(result)
+                // console.log(result)
                 this.newsInfo = result.body.message[0]
             })
         }

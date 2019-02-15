@@ -7,7 +7,7 @@
           <img class="mui-media-object mui-pull-left" :src="item.img_url">
           <div class="mui-media-body">{{item.title}}
             <p class="mui-ellipsis">
-                <span>发表时间:{{item.add_time}}</span>
+                <span>发表时间:{{item.add_time | dateFormat}}</span>
                 <span>点击:{{item.click}}次</span>
             </p>
           </div>
