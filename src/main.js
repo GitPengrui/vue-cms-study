@@ -37,6 +37,10 @@ Vue.component('comment', comment )
 import VueResource from 'vue-resource'
 Vue.use(VueResource)
 
+//导入vue-pic-preview
+import VuePreview from 'vue-pic-preview'
+Vue.use(VuePreview)
+
 //设置vue-resource的请求根路径
 Vue.http.options.root = 'http://www.lovegf.cn:8899/api/'
 
